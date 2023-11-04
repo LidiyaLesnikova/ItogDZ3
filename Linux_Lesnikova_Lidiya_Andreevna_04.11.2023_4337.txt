@@ -1,0 +1,78 @@
+Задание 1. Использование команды cat в Linux
+
+llesnikova@Linux:~$ cat > Pets.txt
+Dog
+Cat
+Hamster
+
+llesnikova@Linux:~$ cat > PackAnimals.txt
+Horse
+Camel
+Donkey
+
+llesnikova@Linux:~$ cat Pets.txt PackAnimals.txt > HumanFriends.txt
+
+llesnikova@Linux:~$ cat HumanFriends.txt
+Dog
+Cat
+Hamster
+Horse
+Camel
+Donkey
+
+llesnikova@Linux:~$ ls
+ HumanFriends.txt   Pets.txt   Видео       Загрузки      Музыка         'Рабочий стол'
+ PackAnimals.txt    snap       Документы   Изображения   Общедоступные   Шаблоны
+
+
+Задание 2. Работа с директориями в Linux
+
+llesnikova@Linux:~$ mkdir ./animals/
+
+llesnikova@Linux:~$ mv HumanFriends.txt ./animals/
+
+llesnikova@Linux:~$ cd animals/
+
+llesnikova@Linux:~/animals$ ls
+HumanFriends.txt
+
+
+Задание 3. Работа с MySQL в Linux.
+
+# apt install mysql-server -y
+
+llesnikova@Linux:~$ systemctl status mysql
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-10-31 19:37:19 MSK; 1h 35min ago
+   Main PID: 1039 (mysqld)
+     Status: "Server is operational"
+      Tasks: 37 (limit: 2803)
+     Memory: 225.7M
+        CPU: 3min 5.202s
+     CGroup: /system.slice/mysql.service
+             └─1039 /usr/sbin/mysqld
+
+окт 31 19:36:45 Linux systemd[1]: Starting MySQL Community Server...
+окт 31 19:37:19 Linux systemd[1]: Started MySQL Community Server.
+
+
+Задание 4. Управление deb-пакетами
+
+llesnikova@Linux:~$ dpkg -l nginx
+Желаемый=неизвестно[u]/установить[i]/удалить[r]/вычистить[p]/зафиксировать[h]
+| Состояние=не[n]/установлен[i]/настроен[c]/распакован[U]/частично настроен[F]/
+            частично установлен[H]/trig-aWait/Trig-pend
+|/ Ошибка?=(нет)/требуется переустановка[R] (верхний регистр
+в полях состояния и ошибки указывает на ненормальную ситуацию)
+||/ Имя            Версия             Архитектура  Описание
++++-==============-==================-============-==========================================
+ii  nginx          1.18.0-6ubuntu14.4 amd64        small, powerful, scalable web/proxy server
+
+llesnikova@Linux:~$ sudo dpkg -r nginx
+(Чтение базы данных … на данный момент установлено 190572 файла и каталога.)
+Удаляется nginx (1.18.0-6ubuntu14.4) …
+
+
+Задание 5. История команд в терминале Ubuntu
+llesnikova@Linux:~$ history > history.txt 
